@@ -1,0 +1,17 @@
+# Install Music21
+!pip install music21
+
+from music21 import stream, note
+
+# Create a simple melody
+melody = stream.Stream()
+
+notes = ['C4', 'E4', 'G4', 'C5', 'G4', 'E4', 'C4']
+
+for n in notes:
+    melody.append(note.Note(n, quarterLength=1))
+
+# Save as MIDI file
+melody.write('midi', fp='generated_music.mid')
+
+print("Music generated successfully!")
